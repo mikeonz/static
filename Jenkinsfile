@@ -1,7 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Lint HTML') {
+      steps {
+        sh  'tidy -q -e *.html'
+    stage('Upload to AWs') {
       steps {
         sh  'echo "Hello World"'
         sh  '''
